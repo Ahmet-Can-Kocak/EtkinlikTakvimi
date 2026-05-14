@@ -4,4 +4,3 @@ Web projesi grup 13 etkinlik takvimi proje dosyaları ve rapor dosyası:
 [index.html](https://github.com/user-attachments/files/27730364/index.html)
 [style.css](https://github.com/user-attachments/files/27730365/style.css)
 [Grup13-ProjeRapor.docx](https://github.com/user-attachments/files/27730468/Grup13-ProjeRapor.docx)
-.
