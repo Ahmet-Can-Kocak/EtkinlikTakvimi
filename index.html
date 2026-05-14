@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etkinlik Takvimi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="header">
+    <div class="header-brand">
+      <span class="brand-dot"></span>
+      <h1>Takvim</h1>
+    </div>
+    <div class="header-actions">
+      <button class="btn-add" id="openModalBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Etkinlik Ekle
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Takvim Nav -->
+    <section class="calendar-nav">
+      <button class="nav-arrow" id="prevMonth">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="month-title">
+        <span class="month-name" id="monthName"></span>
+        <span class="year-badge" id="yearBadge"></span>
+      </div>
+      <button class="nav-arrow" id="nextMonth">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </section>
+
+    <!-- Takvim Grid -->
+    <section class="calendar-wrapper">
+      <div class="weekdays">
+        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span>
+        <span>Cum</span><span>Cmt</span><span>Paz</span>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </section>
+
+    <!-- Etkinlikler Listesi -->
+    <section class="events-section">
+      <div class="events-header">
+        <h2 class="events-title">Etkinlikler</h2>
+        <span class="events-month-label" id="eventsMonthLabel"></span>
+      </div>
+      <div class="events-list" id="eventsList">
+        <p class="no-events">Bu ay etkinlik yok.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3>Yeni Etkinlik</h3>
+        <button class="modal-close" id="closeModalBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="eventTitle">Etkinlik Adı</label>
+          <input type="text" id="eventTitle" placeholder="örn. Toplantı, Doğum Günü…" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eventDate">Tarih</label>
+            <input type="date" id="eventDate" />
+          </div>
+          <div class="form-group">
+            <label for="eventTime">Saat</label>
+            <input type="time" id="eventTime" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="eventDesc">Açıklama</label>
+          <textarea id="eventDesc" rows="3" placeholder="İsteğe bağlı açıklama…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Renk</label>
+          <div class="color-picker" id="colorPicker">
+            <button class="color-btn active" data-color="#e55c5c" style="background:#e55c5c"></button>
+            <button class="color-btn" data-color="#e5925c" style="background:#e5925c"></button>
+            <button class="color-btn" data-color="#d4b84a" style="background:#d4b84a"></button>
+            <button class="color-btn" data-color="#5cb87a" style="background:#5cb87a"></button>
+            <button class="color-btn" data-color="#5c8de5" style="background:#5c8de5"></button>
+            <button class="color-btn" data-color="#a05ce5" style="background:#a05ce5"></button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-cancel" id="cancelBtn">İptal</button>
+          <button class="btn-save" id="saveEventBtn">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
